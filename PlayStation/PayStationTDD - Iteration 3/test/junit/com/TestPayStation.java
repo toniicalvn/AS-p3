@@ -60,6 +60,12 @@ public class TestPayStation {
     // 25 cent in 5 cent coins each giving 2 minutes parking
   }
 
+  @Test
+  public void shouldDisplay4MinFor10Cents() throws IllegalCoinException {
+    ps.addPayment(10);
+    assertEquals("Should display 4 min for 10 cents", 4, ps.readDisplay());
+  }
+
   /** 
    * Verify that illegal coin values are rejected.
   */
