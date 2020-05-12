@@ -68,7 +68,7 @@ public class CalculatorTest {
 	 assertEquals(1, result, 0);
  }
  
- @Test (expected = nEsNegatiu.class)
+ @Test (expected = Greetings.nEsNegatiu.class)
  public void testFactorialNegatiu() {
 	 calc.factorial(-1);
 	 

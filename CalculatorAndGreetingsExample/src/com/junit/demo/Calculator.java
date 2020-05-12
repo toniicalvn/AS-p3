@@ -28,7 +28,7 @@ public class Calculator {
 		 public int factorial(int a) {
 			 int resultat = 1;
 			 
-			 if (a < 0) throw new nEsNegatiu();
+			 if (a < 0) throw new Greetings.nEsNegatiu();
 			 else if (a > 0) {
 				 while(a > 1) {
 					 resultat = resultat * a;
