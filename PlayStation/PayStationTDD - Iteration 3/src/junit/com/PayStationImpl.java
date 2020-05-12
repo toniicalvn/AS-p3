@@ -40,21 +40,28 @@ public class PayStationImpl implements PayStation {
   public void addPayment( int coinValue ) 
           throws IllegalCoinException {
     switch ( coinValue ) {
-    case 5: break;
-    case 10: break;
-    case 25: break;  
-    default: 
-      throw new IllegalCoinException("Invalid coin: "+coinValue);
+      case 5:
+      case 10:
+      case 25:
+        break;
+      default:
+        throw new IllegalCoinException("Invalid coin: "+coinValue);
     }
-    insertedSoFar = coinValue;
+    insertedSoFar += coinValue;
   }
   public int readDisplay() {
     return insertedSoFar / 5 * 2;
   }
+
   public Receipt buy() {
-    return null;
+    Receipt r = new ReceiptImpl(readDisplay());
+    insertedSoFar = 0;
+    return r;
   }
+
   public void cancel() {
+    insertedSoFar = 0;
   }
+
 }
 
